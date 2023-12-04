@@ -1,0 +1,68 @@
+.container-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 20px auto 100px;
+  padding: 30px;
+}
+
+.h1-text {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: var(--GrisTwo);
+}
+
+.h2-text {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: var(--GrisTwo);
+}
+
+.h3-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--Gris);
+
+}
+.p-text {
+  margin: 0 auto 20px 30px;
+}
+
+.marco-tabla {
+  border: 2px solid var(--GrisTwo);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 500px;
+  height: auto;
+  margin: 30px auto 30px 30px;
+}
+
+.table-text {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.th-text, .td-text {
+  padding: 10px;
+  text-align: left;
+}
+
+.tr-text:nth-child(odd) {
+  background-color: var(--GrisClaro);
+}
+
+.td-text > strong {
+  color: rgba(0, 34, 255, 0.857);
+}
+
+.super-margen {
+  margin: 135px auto;
+}
+
+
+@media screen and (max-width: 725px){
+  .container-text {
+    max-width: 340px;
+  }
+}

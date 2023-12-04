@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codo A Codo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">EDITAR MIS DATOS PERSONALES</h1>
+
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <strong>Nombre:</strong>
+                            <span id="nombre">ANA</span>
+                            <i class="bi bi-pencil" onclick="habilitarEdicion('nombre')"></i>
+                        </div>
+
+                        <!-- Apellido -->
+                        <div class="mb-3">
+                            <strong>Apellido:</strong>
+                            <span id="apellido">GOMEZ</span>
+                            <i class="bi bi-pencil" onclick="habilitarEdicion('apellido')"></i>
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="mb-3">
+                            <strong>Contraseña:</strong>
+                            <span id="contraseña">**********</span>
+                            <i class="bi bi-pencil" onclick="habilitarEdicion('contraseña')"></i>
+                        </div>
+
+                        <!-- Mail -->
+                        <div class="mb-3">
+                            <strong>Mail:</strong>
+                            <span id="mail">ANAGOMEZ@GMAIL.COM</span>
+                            <i class="bi bi-pencil" onclick="habilitarEdicion('mail')"></i>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <strong>Teléfono:</strong>
+                            <span id="telefono">123456789</span>
+                            <i class="bi bi-pencil" onclick="habilitarEdicion('telefono')"></i>
+                        </div>
+
+                        <!-- Botón de guardar cambios -->
+                        <button id="btnGuardarCambios" class="btn btn-primary d-none" onclick="guardarCambios()">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function habilitarEdicion(campo) {
+            const spanCampo = document.getElementById(campo);
+
+            if (spanCampo) {
+                const inputCampo = document.createElement('input');
+                inputCampo.value = spanCampo.textContent;
+                inputCampo.classList.add('form-control', 'mb-2');
+                inputCampo.dataset.campo = campo;
+
+                if (campo === 'contraseña') {
+                    inputCampo.type = 'password';
+                }
+
+                spanCampo.replaceWith(inputCampo);
+
+                // mostrar botón de guardar cambios
+                document.getElementById('btnGuardarCambios').classList.remove('d-none');
+            }
+        }
+
+        function obtenerValorEditado(campo) {
+            const elemento = document.getElementById(campo);
+
+            if (elemento && elemento.tagName === 'INPUT') {
+                return elemento.value;
+            } else if (elemento) {
+                return elemento.textContent;
+            }
+
+            return '';
+        }
+
+        function guardarCambios() {
+            // obtener los valores editados
+            const nuevoNombre = obtenerValorEditado('nombre');
+            const nuevoApellido = obtenerValorEditado('apellido');
+            const nuevaContraseña = obtenerValorEditado('contraseña');
+            const nuevoMail = obtenerValorEditado('mail');
+            const nuevoTelefono = obtenerValorEditado('telefono');
+
+            // guardar los valores editados en localStorage
+            localStorage.setItem('nombre', nuevoNombre);
+            localStorage.setItem('apellido', nuevoApellido);
+            localStorage.setItem('contraseña', nuevaContraseña);
+            localStorage.setItem('mail', nuevoMail);
+            localStorage.setItem('telefono', nuevoTelefono);
+
+            // actualizar el contenido con los nuevos valores
+            if (document.getElementById('nombre')) document.getElementById('nombre').textContent = nuevoNombre;
+            if (document.getElementById('apellido')) document.getElementById('apellido').textContent = nuevoApellido;
+            if (document.getElementById('contraseña')) document.getElementById('contraseña').textContent = nuevaContraseña;
+            if (document.getElementById('mail')) document.getElementById('mail').textContent = nuevoMail;
+            if (document.getElementById('telefono')) document.getElementById('telefono').textContent = nuevoTelefono;
+
+            // ocultar botón de guardar cambios
+            document.getElementById('btnGuardarCambios').classList.add('d-none');
+
+            // mostrar mensaje de confirmación
+            const confirmacion = confirm('Se guardaron tus datos con éxito. Al hacer click en aceptar volverás a lapágina de inicio.');
+
+            if (confirmacion) {
+                // redirigir a la página de inicio
+                window.location.href = 'userPage.html';
+            }
+        }
+
+        // cargar los valores almacenados en localStorage al cargar la página
+        window.onload = function () {
+            const nombreGuardado = localStorage.getItem('nombre');
+            const apellidoGuardado = localStorage.getItem('apellido');
+            const contraseñaGuardada = localStorage.getItem('contraseña');
+            const mailGuardado = localStorage.getItem('mail');
+            const telefonoGuardado = localStorage.getItem('telefono');
+
+            if (nombreGuardado) document.getElementById('nombre').textContent = nombreGuardado;
+            if (apellidoGuardado) document.getElementById('apellido').textContent = apellidoGuardado;
+            if (contraseñaGuardada) document.getElementById('contraseña').textContent = contraseñaGuardada;
+            if (mailGuardado) document.getElementById('mail').textContent = mailGuardado;
+            if (telefonoGuardado) document.getElementById('telefono').textContent = telefonoGuardado;
+        };
+    </script>
+</body>
+
+</html>

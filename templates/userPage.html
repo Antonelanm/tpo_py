@@ -1,0 +1,103 @@
+{% set include_menu = false %}
+{% extends "base.html" %}
+
+
+
+
+<!-- ----------------------------------------------------- INICIO MAIN ------------------------------------- -->
+{% block main_content %}
+<header class="header">
+
+  <a href="#outlet-mont" class="header-promo link-scroll">
+    <div class="header-promo__link" role="Alert promo">
+      <!-- Ofertas de hasta el 30% -->
+    </div>
+  </a>
+
+  <!-- Inicio pantalla grande -->
+  <div class="large-screen" id="largeScreen">
+    <div class="header-search">
+      <a class="header-search__logo-link" href="{{ url_for('index') }}">
+        <img class="header-search__logo-img" src="/static/img/logo.png" alt="logo">
+      </a>
+
+      <div><h2 align='center'>Cuenta de Usuario</h2></div>
+
+      <div class="login">
+        <a class="btn-login" href="{{ url_for('login') }}">
+          <img class="btn-login__img" src="/static/img/icons/account_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+          <span class="btn-login__text">Ingresar</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav-desktop" id="nav-desktop">
+      <ul class="menu-desktop">
+        <li class="menu-desktop__item"><a href="config_usuario.html" class="menu-desktop__link" data-target="info_personal">INFORMACION PERSONAL</a></li>
+        <li class="menu-desktop__item"><a href="compras.html" class="menu-desktop__link" data-target="mis_compras">MIS COMPRAS</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Fin de pantalla grande -->
+
+
+
+  <!-- Inicio pantalla pequeña -->
+
+  <div class="small-screen" id="smallScreen">
+    <div class="header-search">
+      <div class="menu-toggle" id="menuToggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <a class="header-search__logo-link" href="#">
+        <img class="header-search__logo-img" src="/static/img/logo.png" alt="logo">
+      </a>
+
+      
+        <div class="login">
+          <a class="btn-login" href="/tamplates/login.html">
+            <img class="btn-login__img" src="/static/img/icons/account_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-burger" id="navBurger">
+    <ul class="menu-burger">
+      <li class="menu-burger__item"><a href="#" class="menu-burger__link" data-target="bikes">INFORMACIÓN PERSONAL</a></li>
+      <li class="menu-burger__item"><a href="#" class="menu-burger__link" data-target="components">MIS COMPRAS</a>
+    </ul>
+  </nav>
+  <!-- Fin de pantalla pequeña -->
+
+  
+</header>
+
+<main class="main">
+
+  <div class="container-text">
+    <h1 class="h1-text">Algun titulo de cuenta de usuario</h1>
+    <section class="section-text">
+      <h2 class="h2-text">Algun subtitulo de cuenta de usuario</h2>
+      <article class="article-text">
+        <h3 class="h3-text">Otro titulo de cuenta de usuario</h3>
+        <p class="p-text">Texto relacionado con cuenta de usuario <br>
+      </article>
+    </section>
+
+  </div>
+
+</main>
+
+{% endblock %}
+<!-- ----------------------------------------------------- FIN MAIN ------------------------------------- -->
+
+</html>

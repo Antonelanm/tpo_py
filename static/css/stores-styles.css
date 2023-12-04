@@ -1,0 +1,100 @@
+:root{
+  /* Colores */
+  --Negro: rgb(34, 34, 34);
+  --Blanco: rgb(255, 255, 255);
+  --BlancoH: rgb(255 255 255 / 95%);
+  --BlancoH2: rgba(255,255,255,0.95);
+  --Gris: rgb(100, 100, 100);
+  --GrisTwo: rgb(50, 50, 50); 
+  --GrisClaro: rgb(186, 186, 186); 
+  --Alternativo: rgb(255, 140, 140);
+  --Alternativo2: rgb(100, 100, 200);
+  --alert: rgb(237, 105, 105);
+
+  /* Fonts */
+  font-size: 20px;
+  font-family: 'Montserrat', Arial,Helvetica,sans-serif;
+}
+
+.stores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 100px;
+}
+
+.stores-title {
+  margin-bottom: 20px;
+}
+
+.stores-label {
+  margin-bottom: 10px;
+}
+
+.stores-locator {
+  width: 300px;
+  height: 40px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 2px solid var(--GrisClaro);
+  border-radius: 5px;
+  color: var(--GrisTwo);
+  margin-bottom: 50px;
+}
+
+.card-map {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: auto;
+}
+
+#city1 {
+  display: flex;
+} 
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 #00000033, 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  width: 500px;
+  height: 450px;
+}
+
+.map-address {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.map-hours {
+  font-size: .9rem;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 725px) {
+  iframe {
+    width: 300px;
+    height: 420px;
+  }
+
+  .map-address {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .map-hours {
+    width: 250px;
+    font-size: .7rem;
+    margin-bottom: 5px;
+  }
+
+  .card-map {
+    width: 350px;
+    height: auto;
+  }
+}
+  

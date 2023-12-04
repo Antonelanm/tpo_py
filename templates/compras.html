@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIS COMPRAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 50px; 
+            text-align: center; 
+        }
+
+        h1 {
+            margin-bottom: 20px; 
+        }
+
+        #tablaCompras {
+            margin: auto; 
+            width: 80%; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MIS COMPRAS</h1>
+
+    <div id="tablaCompras">
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            // array compras
+            const compras = [
+                { codigo: '001', fecha: '2023-02-15', estado: 'Entregado', fechaEntrega: '2023-02-20' },
+                { codigo: '013', fecha: '2023-01-10', estado: 'Pendiente' },
+                { codigo: '023', fecha: '2022-11-11', estado: 'Entregado', fechaEntrega: '2022-11-30' },
+                { codigo: '001', fecha: '2022-09-10', estado: 'Pendiente' },
+                { codigo: '001', fecha: '2022-08-23', estado: 'Entregado', fechaEntrega: '2022-08-26' },
+                { codigo: '005', fecha: '2021-02-10', estado: 'Pendiente' },
+                
+            ];
+
+            // Función para construir la tabla y mostrarla en el elemento con id "tablaCompras"
+            function construirTabla() {
+                const tablaCompras = document.getElementById('tablaCompras');
+
+                const tabla = document.createElement('table');
+                tabla.classList.add('table'); 
+
+                // encabezado de la tabla
+                const encabezado = tabla.createTHead();
+                const filaEncabezado = encabezado.insertRow();
+                ['Código', 'Fecha', 'Estado', 'Fecha de Entrega'].forEach(textoEncabezado => {
+                    const th = document.createElement('th');
+                    th.textContent = textoEncabezado;
+                    filaEncabezado.appendChild(th);
+                });
+
+                // creo el cuerpo de la tabla
+                const cuerpoTabla = tabla.createTBody();
+
+                // sumar filas con datos de compras
+                compras.forEach(compra => {
+                    const fila = cuerpoTabla.insertRow();
+                    Object.values(compra).forEach(valor => {
+                        const celda = fila.insertCell();
+                        celda.textContent = valor;
+                    });
+                });
+
+                // agregar la tabla al contenedor
+                tablaCompras.appendChild(tabla);
+            }
+
+            // llamar función para hacer la tabla al cargar la página
+            construirTabla();
+        };
+    </script>
+</body>
+
+</html>

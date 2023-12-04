@@ -1,0 +1,24 @@
+.mensaje-login {
+  margin-top: 10px;
+  font-size: .8rem;
+  color: var(--alert);
+  text-align: center;
+}
+
+.btn-disabled {
+  margin: 25px 1px auto;
+  height: 35px;
+  box-shadow: 0 2px 8px 0 #00000033, 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  border: 1.5px solid var(--Alternativo2);
+  border-radius: 5px;
+  background-color: var(--Alternativo2);
+  color: var(--Gris);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.botonton {
+  background-color: blueviolet;
+}
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+<!-- Css -->
+{% block additional_css %}
+<link rel="stylesheet" href="/static/css/cv-styles.css">
+{% endblock %}
+<!-- JavaScript  -->
+{% block additional_js %}
+<script src="/static/js/login.js" defer></script>
+{% endblock %}
+
+<!-- ----------------------------------------------------- INICIO MAIN ------------------------------------- -->
+{% block main_content %}
+<main class="main">
+
+  <div class="container-text">
+    <section class="section-text">
+      <h2 class="h2-text">Trabaja con Nosotros</h2>
+      <article class="article-text">
+        <h3 class="h3-text">¿Cuáles son las oportunidades de empleo en tu tienda de bicicletas?</h3>
+        <p class="p-text">En nuestra tienda de bicicletas, ofrecemos diversas oportunidades de empleo, desde ventas y
+          atención al cliente hasta técnicos de servicio y roles de gestión. Buscamos personas apasionadas por las
+          bicicletas y comprometidas con brindar un excelente servicio a nuestros clientes.</p>
+      </article>
+      <article class="article-text">
+        <h3 class="h3-text">¿Cómo puedo solicitar un trabajo en tu tienda?</h3>
+        <p class="p-text">Puede solicitar un trabajo en nuestra tienda enviando su currículum vitae y carta de
+          presentación a nuestra dirección de correo electrónico de recursos humanos. También puede consultar las
+          vacantes actuales en nuestro sitio web y enviar su solicitud en línea.</p>
+      </article>
+      <article class="article-text">
+        <h3 class="h3-text">¿Qué beneficios ofrecen a los empleados?</h3>
+        <p class="p-text">Valoramos a nuestros empleados y ofrecemos una serie de beneficios, que pueden incluir:
+          - Salario competitivo.
+          - Oportunidades de desarrollo y capacitación.
+          - Descuentos en productos de bicicletas.
+          - Ambiente de trabajo positivo y colaborativo.
+          - Posibilidad de crecimiento en la empresa.
+        </p>
+      </article>
+      <article class="article-text">
+        <h3 class="h3-text">¿Qué se espera de un candidato exitoso?</h3>
+        <p class="p-text">Buscamos candidatos que compartan nuestra pasión por las bicicletas y que tengan habilidades
+          como el servicio al cliente, el trabajo en equipo y la atención a los detalles. La experiencia en la industria
+          de bicicletas es una ventaja, pero no esencial. Valoramos la actitud positiva y el deseo de aprender.</p>
+      </article>
+
+
+      <form class="cv-card">
+        <label for="cv" class="cv-label">Envianos tu CV:</label>
+        <label for="cv" class="upload-file">
+          <span class="upload-btn">Cargar CV (PDF)</span>
+          <input type="file" id="cv" name="cv" accept=".pdf" class="cv-input" required onchange="updateFileName(this)">
+        </label>
+        <button disabled type="button" class="cv-btn-disabled" id="submitBtn" onclick="sendCv()">Enviar CV</button>
+      </form>
+    </section>
+  </div>
+
+</main>
+{% endblock %}
+
+<!-- ----------------------------------------------------- FIN MAIN ------------------------------------- -->
+
+</html>
