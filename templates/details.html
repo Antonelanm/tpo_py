@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<!-- Css -->
+{% block additional_css %}
+<link rel="stylesheet" href="/static/css/details-styles.css">
+{% endblock %}
+<!-- JavaScript  -->
+{% block additional_js %}
+<script src="/static/js/details.js" defer></script>
+{% endblock %}
+
+<!-- ----------------------------------------------------- INICIO MAIN ------------------------------------- -->
+{% block main_content %}
+<main class="main" id="main">
+
+  <div class="card" id="productDetails">
+    <!-- La tarjeta de detalles del producto y el botón de compra se genera aca usando JavaScript -->
+  </div>
+
+</main>
+
+{% endblock %}
+<!-- ----------------------------------------------------- FIN MAIN ------------------------------------- -->
+
+</html>

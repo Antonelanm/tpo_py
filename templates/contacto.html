@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+
+ <!-- Css -->
+  {% block additional_css %}
+  <link rel="stylesheet" href="/static/css/contacto-styles.css">
+  {% endblock %}
+  <!-- JavaScript  -->
+  {% block additional_js %}
+  <script src="/static/js/login.js" defer></script>
+  <script src="/static/js/consulta.js" defer></script>
+  {% endblock %}
+  
+<!-- ----------------------------------------------------- INICIO MAIN ------------------------------------- -->
+{% block main_content %}
+  <main class="main">
+
+
+    <div class="container-contacto">
+      <h2 style="text-align: center; margin-top: 20px;">FORMULARIO DE CONSULTA</h2>
+
+
+    <br>
+    <br>
+
+    <h3 style="background-color: gray; opacity: 0.8; padding: 10px;">Dejanos tus datos para poder contactarte</h3>
+
+    <br>
+    <form  action="https://formspree.io/f/mzblyqzb"
+    method="POST"">
+        <fieldset>
+            <div class="input-container">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            
+            <div class="input-container">
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="input-container">
+                <label for="confirmarEmail">Confirme su correo electrónico</label>
+                <input type="email" name="confirmarEmail" id="confirmarEmail">
+            </div>
+        </fieldset>
+    
+        <h3 style="background-color: gray; opacity: 0.8; padding: 10px;">Escribinos tu consulta</h3>
+
+        <br>
+        <fieldset>
+            <textarea name="consulta" id="consul" cols="40" rows="15"></textarea>
+        </fieldset>
+    
+        <div class="checkbox-container">
+            <input type="checkbox" name="acepto" id="promo">
+            <label for="promo">Acepto recibir ofertas y promociones por correo</label>
+        </div>        
+        <br>
+        <div id="mensajeError" style="color: red; margin-left: 20px;"></div>
+        <br>
+        <button class="buttonValidar" type="submit" onclick="validarConsulta()">Enviar consulta</button>
+    </form>    
+   
+
+    <h2>También podés encontrarnos en</h2>
+    <div class="redes-sociales">
+        <a href="http://facebok.com" target="_blank">
+            <img src="/static/img/icons/face.png" alt="Facebook">
+        </a>
+        <a href="http://instagram.com" target="_blank">
+            <img src="/static/img/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="http://whatsappweb.com" target="_blank">
+            <img src="/static/img/icons/wsp.png" alt="Whatsapp">
+        </a>
+    </div>
+  
+    </div>
+
+
+
+  </main>
+
+  {% endblock %}
+<!-- ----------------------------------------------------- FIN MAIN ------------------------------------- -->
+
+
+</html>

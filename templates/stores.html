@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+<!-- Css -->
+{% block additional_css %}
+<link rel="stylesheet" href="/static/css/stores-styles.css">
+{% endblock %}
+<!-- JavaScript  -->
+{% block additional_js %}
+<script src="/static/js/stores.js" defer></script>
+{% endblock %}
+
+<!-- ----------------------------------------------------- INICIO MAIN ------------------------------------- -->
+{% block main_content %}
+<main class="main">
+
+  <div class="stores">
+    <h2 class="stores-title">Nuestras Tiendas</h2>
+
+
+    <label for="stores-locator" class="stores-label">Seleciona tu ciudad</label>
+    <select name="" id="stores-locator" class="stores-locator">
+      <option value="city1" id="caba" selected>Buenos Aires - CABA</option>
+      <option value="city2" id="laplata">La Plata</option>
+      <option value="city3" id="mdq">Mar del plata</option>
+      <option value="city4" id="pinamar">Pinamar</option>
+      <option value="city5" id="tandil">Tandil</option>
+    </select>
+
+
+    <div class="card-map" id="city1">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3283.894839307418!2d-58.51334068652665!3d-34.60682060357603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1697326372761!5m2!1sen!2sar"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-address">Av. Beiro 4416 - CABA</h2>
+      <p class="map-hours">Horarios de atención: Lunes a Sábados de 9hs a 19hs.</p>
+      <p class="map-tel">Tel: 011 478-21080</p>
+    </div>
+
+    <div class="card-map" id="city2">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9073.371385403114!2d-57.96008078332993!3d-34.91787178621824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1697321918281!5m2!1sen!2sar"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-address">Av. 44 828 - La Plata</h2>
+      <p class="map-hours">Horarios de atención: Lunes a Sábados de 9hs a 19hs.</p>
+      <p class="map-tel">Tel: 0221 485-82100</p>
+    </div>
+
+    <div class="card-map" id="city3">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6288.0867163142175!2d-57.550726742091676!3d-37.999449127533396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1697321636101!5m2!1sen!2sar"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-address">San Luis 3323 - Mar del Plata</h2>
+      <p class="map-hours">Horarios de atención: Lunes a Sábados de 9hs a 19hs.</p>
+      <p class="map-tel">Tel: 0223 482-1080</p>
+    </div>
+
+    <div class="card-map" id="city4">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3181.981222020773!2d-56.87287062565613!3d-37.105564481600894!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1697336423354!5m2!1sen!2sar"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-address">Apolo 365 - Pinamar</h2>
+      <p class="map-hours">Horarios de atención: Lunes a Sábados de 9hs a 19hs.</p>
+      <p class="map-tel">Tel: 02254 51-7320</p>
+    </div>
+
+    <div class="card-map" id="city5">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3172.5778968475292!2d-59.13388501432826!3d-37.32882507724604!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1697336369564!5m2!1sen!2sar"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-address">9 de Julio 406 - Tandil</h2>
+      <p class="map-hours">Horarios de atención: Lunes a Sábados de 9hs a 19hs.</p>
+      <p class="map-tel">Tel: 0223 4821080</p>
+    </div>
+
+  </div>
+
+
+</main>
+{% endblock %}
+
+<!-- ----------------------------------------------------- FIN MAIN ------------------------------------- -->
+
+</html>
